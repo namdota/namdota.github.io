@@ -6,7 +6,9 @@
   </head>
   <body>
     <a href="/bluespan-edition.html">bluespan edition</a>
-    <canvas id="myChart" width="200" height="200"></canvas>
+    <div style="height: 90vh">
+      <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
     <script>
      var range = [...Array(10).keys()];
 
@@ -52,6 +54,8 @@
          ]
        },
        options: {
+         responsive: true,
+         maintainAspectRatio: false,
          annotation: {
            annotations: [
              {
