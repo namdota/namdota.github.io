@@ -6,7 +6,9 @@
   </head>
   <body>
     <a href="/">raw data</a>
-    <canvas id="myChart" width="200" height="200"></canvas>
+    <div style="height: 90vh">
+      <canvas id="myChart" width="200" height="200"></canvas>
+    </div>
     <script>
       var ctx = document.getElementById('myChart').getContext('2d');
       var myChart = new Chart(ctx, {
@@ -42,7 +44,9 @@
                           beginAtZero: true
                       }
                   }]
-              }
+              },
+              responsive: true,
+              maintainAspectRatio: false,
           }
       });
     </script>
