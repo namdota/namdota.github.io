@@ -1,5 +1,6 @@
 <canvas id="myChart" width="200" height="200"></canvas>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.5/chartjs-plugin-annotation.js"></script>
 <script>
  var range = [...Array(10).keys()];
 
@@ -7,9 +8,6 @@
  var l2 = range.map(x => 140 * x + 200 * x - 150 * x);
  var l3 = range.map(x => 140 * x + 300 * x - 150 * x);
  var l2k = range.map(x => 123 * x + 176 * x - 150 * x);
-
- var redline = range.map(x => 1287);
- var redlinek = range.map(x => 1503);
 
  var ctx = document.getElementById('myChart').getContext('2d');
  var myChart = new Chart(ctx, {
@@ -45,23 +43,73 @@
          borderColor: 'rgba(255, 206, 86, 1)',
          borderWidth: 1
        },
-       {
-         label: 'tinker mana @ lvl18 + dagon1',
-         data: redline,
-         backgroundColor: 'rgba(255, 99, 132, 0.0)',
-         borderColor: 'rgba(255, 99, 132, 1)',
-         borderWidth: 2
-       },
-       {
-         label: 'tinker mana @ lvl18 + dagon1 + kaya',
-         data: redlinek,
-         backgroundColor: 'rgba(255, 99, 132, 0.0)',
-         borderColor: 'rgba(255, 99, 132, 1)',
-         borderWidth: 2
-       }
      ]
    },
    options: {
+     annotation: {
+       annotations: [
+         {
+           type: "line",
+           mode: "vertical",
+           scaleID: "x-axis-0",
+           value: "4",
+           borderColor: "red",
+           label: {
+             content: "2800 rocket dmg",
+             enabled: true,
+             position: "top"
+           }
+         },
+         {
+           type: "line",
+           mode: "vertical",
+           scaleID: "x-axis-0",
+           value: "10",
+           borderColor: "red",
+           label: {
+             content: "7000 rocket dmg",
+             enabled: true,
+             position: "top"
+           }
+         },
+         {
+           type: "line",
+           mode: "vertical",
+           scaleID: "x-axis-0",
+           value: "8",
+           borderColor: "red",
+           label: {
+             content: "5600 rocket dmg",
+             enabled: true,
+             position: "top"
+           }
+         },
+         {
+           type: "line",
+           mode: "horizontal",
+           scaleID: "y-axis-0",
+           value: 1287,
+           borderColor: "red",
+           label: {
+             content: "tinker mana @ lvl18",
+             enabled: true,
+             position: "left"
+           }
+         },
+         {
+           type: "line",
+           mode: "horizontal",
+           scaleID: "y-axis-0",
+           value: 1503,
+           borderColor: "red",
+           label: {
+             content: "tinker mana @ lvl18 + kaya",
+             enabled: true,
+             position: "left"
+           }
+         },
+       ]
+     },
      scales: {
        yAxes: [{
          scaleLabel: {
