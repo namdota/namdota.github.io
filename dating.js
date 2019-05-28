@@ -18,7 +18,7 @@ var chart = {
             },
             {
                 label: 'Hồ Chí Minh',
-                data: [2],
+                data: [3],
                 backgroundColor: 'rgba(153, 102, 255, 0.2)',
                 borderColor: 'rgba(153, 102, 255, 1)',
                 borderWidth: 1
